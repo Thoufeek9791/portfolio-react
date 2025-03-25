@@ -23,7 +23,7 @@ const Hero = () => {
 
                 <div className="w-full lg:w-1/2 lg:p-8">
                 <div className="flex justify-center">
-                    <motion.img initial={{x: 100, opacity: 0}}  viewport={{ once: true }} animate={{x: 0, opacity: 1}} transition={{duration: 0.5, delay: 1.5}} src={portfolio} alt="portfolio" className="h-[40rem]"/>
+                    <motion.img initial={{x: 100, opacity: 0}}  viewport={{ once: true }} animate={{x: 0, opacity: 1}} transition={{duration: 0.5, delay: 1.5}} src={portfolio} alt="portfolio" className="lg:h-[40rem]"/>
                 </div>
                 </div>
             </div>
