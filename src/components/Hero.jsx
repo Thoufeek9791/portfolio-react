@@ -1,5 +1,5 @@
 import { HERO_CONTENT } from "../constants";
-import portfolio from '../assets/kevinRushProfile.jpg'
+import portfolio from '../assets/profile.jpg'
 import { motion } from "motion/react"
 
 const container = (delay) => (
@@ -15,15 +15,15 @@ const Hero = () => {
             <div className="flex flex-wrap">
                 <div className="w-full lg:w-1/2">
                 <div className="flex flex-col items-center lg:items-start">
-                    <motion.h1 variants={container(0.5)} initial="hidden" animate="visible" className="pb-16 text-4xl  font-thin tracking-tight lg:mt-16 lg:text-8xl whitespace-nowrap">Thoufeek Rahuman</motion.h1>
-                    <motion.span variants={container(1)} initial="hidden" animate="visible" className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent">Full Stack Developer</motion.span>
-                    <motion.p variants={container(1.5)} initial="hidden" animate="visible" className="my-2 max-w-xl py-6 font-light tracking-tighter">{HERO_CONTENT}</motion.p>
+                    <motion.h1 variants={container(0.5)} initial="hidden" animate="visible"  viewport={{ once: true }} className="pb-16 text-4xl  font-thin tracking-tight lg:mt-16 lg:text-8xl whitespace-nowrap">Thoufeek Rahuman</motion.h1>
+                    <motion.span variants={container(1)} initial="hidden" animate="visible"  viewport={{ once: true }} className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent">Frontend Developer</motion.span>
+                    <motion.p variants={container(1.5)} initial="hidden" animate="visible"  viewport={{ once: true }} className="my-2 max-w-xl py-6 font-light tracking-tighter">{HERO_CONTENT}</motion.p>
                 </div>
                 </div>
 
-                <div className="w-full lg:w-1/2 lg:p-8">    
+                <div className="w-full lg:w-1/2 lg:p-8">
                 <div className="flex justify-center">
-                    <motion.img initial={{x: 100, opacity: 0}} animate={{x: 0, opacity: 1}} transition={{duration: 0.5, delay: 1.5}} src={portfolio} alt="portfolio" />
+                    <motion.img initial={{x: 100, opacity: 0}}  viewport={{ once: true }} animate={{x: 0, opacity: 1}} transition={{duration: 0.5, delay: 1.5}} src={portfolio} alt="portfolio" className="h-[40rem]"/>
                 </div>
                 </div>
             </div>

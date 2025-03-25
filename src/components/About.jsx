@@ -11,6 +11,7 @@ const About = () => {
              className="flex flex-wrap">
                 <motion.div 
                 whileInView={{opacity: 1, x: 0}}
+                 viewport={{ once: true }}
              initial={{opacity: 0, x: -100}}
              transition={{duration: 0.5}}
                  className="w-full lg:w-1/2 lg:p-8">
@@ -23,6 +24,7 @@ const About = () => {
                  <motion.div 
                  initial={{opacity: 0, x: 100}}
                  whileInView={{opacity: 1, x: 0}}
+                 viewport={{ once: true }}
                  transition={{duration: 0.5}}
                  className='w-full lg:w-1/2'>
                     <div className='flex justify-center lg:justify-start'>

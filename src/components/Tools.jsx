@@ -1,12 +1,14 @@
-import { BiLogoMongodb } from "react-icons/bi";
-import { DiMongodb } from "react-icons/di";
-import { FaNodeJs, FaSass } from "react-icons/fa";
-import { RiNextjsLine, RiNodejsFill, RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
-import { SiRedux } from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
 import {motion} from 'motion/react'
+import viteIcon from '../assets/tools/vite-icon.svg';
+import webpackIcon from '../assets/tools/webpack.svg';
+import eslintIcon from '../assets/tools/eslint.svg';
+import prettierIcon from '../assets/tools/prettier.svg';
+import babelIcon from '../assets/tools/babel.svg';
+import gitIcon from '../assets/tools/git.svg';
+import npmIcon from '../assets/tools/npm.svg';
 
-const Technology = () => {
+
+const Tools = () => {
 
     const iconVariations = (duration) => ({
         initial: {y: -10},
@@ -27,7 +29,7 @@ const Technology = () => {
             initial={{opacity: 0,y: -100}}
             whileInView={{opacity: 1, y: 0}}
             transition={{duration: 1.5}}
-             className="my-20 text-center text-4xl">Technology</motion.h2>
+             className="my-20 text-center text-4xl">Tools</motion.h2>
             <motion.div 
             initial={{opacity: 0,x: -100}}
             whileInView={{opacity: 1, x: 0}}
@@ -40,61 +42,61 @@ const Technology = () => {
                     initial='initial'
                     animate='animate'
                     className="rounded-2xl border-4 border-neutral-800 p-4">
-                        <RiReactjsLine className="text-6xl text-cyan-400"/>
+                        <img src={viteIcon} alt="vite icon" width={60} height={60} />
                     </motion.div>
-                    <motion.div
+
+                    <motion.div 
                     variants={iconVariations(3)}
                     initial='initial'
                     animate='animate'
-                     className="rounded-2xl border-4 border-neutral-800 p-4">
-                    <TbBrandNextjs className="text-6xl"/>
-                        
+                    className="rounded-2xl border-4 border-neutral-800 p-4">
+                        <img src={webpackIcon} alt="vite icon" width={60} height={60} />
                     </motion.div>
-                    <motion.div 
+
+                     <motion.div 
                     variants={iconVariations(5)}
                     initial='initial'
                     animate='animate'
                     className="rounded-2xl border-4 border-neutral-800 p-4">
-                    <RiTailwindCssFill className="text-6xl text-cyan-400"/>
-                        
+                        <img src={eslintIcon} alt="vite icon" width={60} height={60} />
                     </motion.div>
-                    <motion.div 
+
+                     <motion.div 
                     variants={iconVariations(2)}
                     initial='initial'
                     animate='animate'
                     className="rounded-2xl border-4 border-neutral-800 p-4">
-                    <FaSass className="text-6xl text-pink-500"/>
-                        
+                        <img src={prettierIcon} alt="vite icon" width={60} height={60} />
                     </motion.div>
+
                     <motion.div 
                     variants={iconVariations(2.5)}
                     initial='initial'
                     animate='animate'
                     className="rounded-2xl border-4 border-neutral-800 p-4">
-                        
-                    <SiRedux className="text-6xl text-purple-800"/>
+                        <img src={babelIcon} alt="vite icon" width={60} height={60} />
                     </motion.div>
-                    <motion.div
+                    
+                    <motion.div 
                     variants={iconVariations(6)}
                     initial='initial'
                     animate='animate'
-                     className="rounded-2xl border-4 border-neutral-800 p-4">
-                    <FaNodeJs className="text-6xl text-lime-500"/>
-                        
-                    </motion.div>
-                    <motion.div
-                    variants={iconVariations(4)}
-                    initial='initial'
-                    animate='animate'
-                     className="rounded-2xl border-4 border-neutral-800 p-4">
-                        
-                    <BiLogoMongodb className="text-6xl text-green-500"/>
+                    className="rounded-2xl border-4 border-neutral-800 p-4">
+                        <img src={gitIcon} alt="vite icon" width={60} height={60} />
                     </motion.div>
                     
                 
+                <motion.div 
+                    variants={iconVariations(4)}
+                    initial='initial'
+                    animate='animate'
+                    className="rounded-2xl border-4 border-neutral-800 p-4">
+                        <img src={npmIcon} alt="vite icon" width={60} height={60} />
+                    </motion.div>
+                    
             </motion.div>
         </div>
     );
 }
 
-export default Technology;
+export default Tools;

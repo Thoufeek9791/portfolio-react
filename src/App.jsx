@@ -7,6 +7,7 @@ import Hero from './components/Hero'
 import NavBar from './components/NavBar'
 import Projects from './components/Projects'
 import Technology from './components/Technology'
+import Tools from './components/Tools'
 
 function App() {
   
@@ -25,6 +26,7 @@ function App() {
     <Hero/>
     <About/>
     <Technology/>
+    <Tools/>
     <Experiences/>
     <Projects/>
     <Contact/>

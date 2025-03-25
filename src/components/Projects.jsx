@@ -9,10 +9,12 @@ const Projects = () => {
              initial={{opacity: 0,y: -100}}
             whileInView={{opacity: 1, y: 0}}
             transition={{duration: 1.5}}
+            viewport={{ once: true }}
             className="my-20 text-center text-4xl">Projects</motion.h2>
-            <div>{PROJECTS.map(project => (
-                <div key={generateKey(project.title)} className="mb-8 flex flex-wrap lg:justify-center">
+            <div >{PROJECTS.map(project => (
+                <a href={project.link} key={generateKey(project.title)} className="mb-8 flex flex-wrap lg:justify-center" target="_blank">
                     <motion.div 
+                    viewport={{ once: true }}
                      whileInView={{opacity: 1, x: 0}}
              initial={{opacity: 0, x: -100}}
              transition={{duration: 0.5}}
@@ -20,6 +22,7 @@ const Projects = () => {
                     <img src={project.image} width={150} height={150} alt={project.title} className="mb-6 rounded"/>
                     </motion.div>
                     <motion.div 
+                    viewport={{ once: true }}
                      whileInView={{opacity: 1, x: 0}}
              initial={{opacity: 0, x: 100}}
              transition={{duration: 0.5}}
@@ -32,7 +35,7 @@ const Projects = () => {
                         ))
                     }
                     </motion.div>
-                </div>
+                </a>
             ))}</div>
         </div>
     );
