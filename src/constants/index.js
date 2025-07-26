@@ -15,26 +15,27 @@ Constantly staying updated with the latest web technologies, I strive to deliver
 
 export const EXPERIENCES = [
   {
-    year: "2023 - Present",
-    role: "Software Engineer",
+    year: "2025 - Present",
+    role: "Senior Software Engineer",
     company: "Novac Technology and Solutions.",
     description: `Led a team in developing and maintaining web applications using JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases. Collaborated with stakeholders to define project requirements and timelines.`,
     technologies: ["Javascript", "React.js", "Next.js", "Zustand"],
   },
-  // {
-  //   year: "2022 - 2023",
-  //   role: "Frontend Developer",
-  //   company: "Adobe",
-  //   description: `Designed and developed user interfaces for web applications using Next.js and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
-  //   technologies: ["HTML", "CSS", "Vue.js", "mySQL"],
-  // },
-  // {
-  //   year: "2021 - 2022",
-  //   role: "Full Stack Developer",
-  //   company: "Facebook",
-  //   description: `Developed and maintained web applications using JavaScript, React.js, and Node.js. Designed and implemented RESTful APIs for data communication. Collaborated with cross-functional teams to deliver high-quality software products on schedule.`,
-  //   technologies: ["Python", "Svelte", "Three.js", "Postgres"],
-  // },
+  {
+    year: "2024 - 2025",
+    role: "Software Engineer",
+    company: "Novac Technology and Solutions.",
+    description: `Designed and developed user interfaces for web applications using Next.js and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
+    technologies: ["Node", "Express", "Mongo DB", "mySQL"],
+  },
+  {
+    year: "2023 - 2024",
+    role: "Software Engineer Trainee",
+    company: "Novac Technology and Solutions.",
+    description: `Developed and maintained web applications using JavaScript, React.js, and Node.js. Designed and implemented RESTful APIs for data communication. Collaborated with cross-functional teams to deliver high-quality software products on schedule.`,
+    // technologies: ["Python", "Svelte", "Three.js", "Postgres"],
+    technologies: ["HTML", "CSS", "Javascript", "scss", 'Bootstrap'],
+  },
   // {
   //   year: "2020 - 2021",
   //   role: "Software Engineer",
@@ -61,22 +62,22 @@ export const PROJECTS = [
       "A fast-paced dice-rolling game built with React. Features interactive gameplay, real-time state management, and a sleek UI. Roll the dice, lock in your numbers, and win by matching all ten! 🎲⚡",
     technologies: ["React", "CSS"],
   },
-  {
-    title: "Portfolio Website",
-    link: 'https://promptopia-eight-navy.vercel.app/',
-    image: project3,
-    description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React", "Bootstrap"],
-  },
-  {
-    title: "Cryptocurrency Website",
-    link: '',
-    image: project4,
-    description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["React", "Redux Toolkit", "Redux Toolkit Query", "Shadcn UI", "mySQL", "nodejs"],
-  },
+  // {
+  //   title: "Portfolio Website",
+  //   link: 'https://promptopia-eight-navy.vercel.app/',
+  //   image: project3,
+  //   description:
+  //     "A personal portfolio website showcasing projects, skills, and contact information.",
+  //   technologies: ["HTML", "CSS", "React", "Bootstrap"],
+  // },
+  // {
+  //   title: "Cryptocurrency Website",
+  //   link: '',
+  //   image: project4,
+  //   description:
+  //     "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
+  //   technologies: ["React", "Redux Toolkit", "Redux Toolkit Query", "Shadcn UI", "mySQL", "nodejs"],
+  // },
   {
     title: "Tic Tac Toe Game",
     link: 'https://thoufeek9791.github.io/Tic-Tac-Toe/',
