@@ -46,6 +46,22 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+   {
+    title: "SKI Retail Capital",
+    link: 'https://skiretailcapital.com/',
+    image: project3,
+    description:
+      "A personal portfolio website showcasing projects, skills, and contact information.",
+    technologies: ["HTML", "CSS", "javascript", "ES6", 'modules', 'nodejs', 'express'],
+  },
+  {
+    title: 'Shriram AMC',
+    link: 'https://www.shriramamc.in/',
+    image: project4,
+    description:
+      "I worked on the Shriram AMC website, a financial services platform for mutual funds, where I developed responsive and user-friendly frontend interfaces. My contributions included building fund listing pages, implementing SIP and Lumpsum calculators, and enhancing goal-based investment planning sections. I focused on delivering a seamless user experience with modern UI, smooth navigation, and optimized performance, while ensuring accessibility and design consistency across devices.",
+    technologies: ["HTML", "CSS", "javascript", "ES6", 'modules', 'nodejs', 'express'],
+  },
   {
     title: "Promptopia",
     image: project1,
@@ -94,7 +110,6 @@ export const PROJECTS = [
       "A simple and interactive To-Do List web app built with JavaScript, allowing users to add, delete, and mark tasks as completed. The app features a clean and responsive UI for seamless task management. It utilizes local storage to save tasks even after refreshing the page. Designed for efficiency, it enhances productivity with an intuitive user experience.",
     technologies: ["HTML", "CSS", "Vanilla JavaScript", "ES6", "Local Storage",],
   },
-
 ];
 
 export const CONTACT = {
