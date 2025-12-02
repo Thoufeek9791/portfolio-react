@@ -8,4 +8,7 @@
   :root {
     font-family: "Inter", sans-serif;
   }
+  body {
+    @apply bg-neutral-950 text-neutral-300 antialiased;
+  }
 }
