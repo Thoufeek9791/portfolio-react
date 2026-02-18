@@ -1,4 +1,4 @@
-import aboutImg from '../assets/about.jpg'
+import animatedProfile from '../assets/animated-profile.jpeg'
 import { ABOUT_TEXT } from '../constants';
 import { motion } from "motion/react"
 
@@ -40,7 +40,7 @@ const About = () => {
         </motion.h2>
       </div>
 
-      <div className="flex flex-col lg:flex-row items-center gap-10 sm:gap-12 lg:gap-20">
+      <div className="flex flex-col lg:flex-row items-start gap-10 sm:gap-12 lg:gap-20">
         {/* Image Column */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
@@ -59,7 +59,7 @@ const About = () => {
             className='relative'
           >
             <img
-              src={aboutImg}
+              src={animatedProfile}
               alt='About Thoufeek'
               className='relative w-full rounded-3xl object-cover'
               style={{

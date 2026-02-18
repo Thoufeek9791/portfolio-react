@@ -19,6 +19,8 @@ function App() {
       smooth: true,
     })
 
+    window.__lenis = lenis;
+
     function raf(time) {
       lenis.raf(time)
       requestAnimationFrame(raf)
@@ -28,6 +30,7 @@ function App() {
 
     return () => {
       lenis.destroy()
+      window.__lenis = null;
     }
   }, [])
 

@@ -20,6 +20,23 @@ const NavBar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setMobileOpen(false);
+    // Small delay to let menu close before scrolling
+    setTimeout(() => {
+      const targetId = href.replace('#', '');
+      const el = document.getElementById(targetId);
+      if (el) {
+        if (window.__lenis) {
+          window.__lenis.scrollTo(el, { offset: -80 });
+        } else {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, 100);
+  };
+
   return (
     <motion.nav
       initial={{ y: -80, opacity: 0 }}
@@ -48,6 +65,7 @@ const NavBar = () => {
             <motion.a
               key={link.label}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * i + 0.3 }}
@@ -122,7 +140,7 @@ const NavBar = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className='text-[#e0dff5] hover:text-white font-medium transition-colors py-3 px-3 rounded-xl hover:bg-[rgba(124,58,237,0.1)] text-base'
                 >
                   {link.label}

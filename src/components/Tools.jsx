@@ -1,6 +1,7 @@
 import { SiVite, SiWebpack, SiEslint, SiPostman, SiGit, SiFigma, SiVercel, SiClaude } from "react-icons/si";
+import cursorAI from '../assets/cursor-icon.png'
+import antigravity from '../assets/antigravity.svg'
 import { VscVscode } from "react-icons/vsc";
-import { TbSparkles, TbRobot } from "react-icons/tb";
 import { motion } from 'motion/react'
 
 const tools = [
@@ -12,8 +13,8 @@ const tools = [
   { icon: SiFigma, name: 'Figma', description: 'UI design', color: '#f472b6', glow: 'rgba(244,114,182,0.4)' },
   { icon: VscVscode, name: 'VS Code', description: 'Code editor', color: '#38bdf8', glow: 'rgba(56,189,248,0.4)' },
   { icon: SiVercel, name: 'Vercel', description: 'Deployment', color: '#e2e8f0', glow: 'rgba(226,232,240,0.3)' },
-  { icon: TbSparkles, name: 'Cursor AI', description: 'AI code editor', color: '#fbbf24', glow: 'rgba(251,191,36,0.4)' },
-  { icon: TbRobot, name: 'Antigravity', description: 'AI coding agent', color: '#34d399', glow: 'rgba(52,211,153,0.4)' },
+  { icon: cursorAI, name: 'Cursor AI', description: 'AI code editor', color: '#fbbf24', glow: 'rgba(251,191,36,0.4)' },
+  { icon: antigravity, name: 'Antigravity', description: 'AI coding agent', color: '#34d399', glow: 'rgba(52,211,153,0.4)' },
   { icon: SiClaude, name: 'Claude Code', description: 'AI assistant', color: '#f0a97a', glow: 'rgba(240,169,122,0.4)' },
 ];
 
@@ -35,12 +36,17 @@ const ToolCard = ({ tool, index }) => {
       />
 
       {/* Icon */}
+      {/* Icon */}
       <motion.div
         animate={{ y: [0, -5, 0] }}
         transition={{ duration: 3 + index * 0.3, repeat: Infinity, ease: 'easeInOut' }}
         className='relative z-10'
       >
-        <Icon style={{ color: tool.color, fontSize: 'clamp(2rem, 5vw, 3rem)' }} />
+        {typeof Icon === 'string' ? (
+          <img src={Icon} alt={tool.name} className="w-8 h-8 sm:w-10 sm:h-12 object-contain" />
+        ) : (
+          <Icon style={{ color: tool.color, fontSize: 'clamp(2rem, 5vw, 3rem)' }} />
+        )}
       </motion.div>
 
       {/* Name & Description */}
