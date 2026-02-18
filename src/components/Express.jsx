@@ -1,79 +1,109 @@
-import { EXPERIENCES } from "../constants";
-import { generateKey } from "../utils/keygeneration";
-import { motion } from "motion/react";
+import { EXPERIENCES } from '../constants'
+import { motion } from 'motion/react'
 
-const Experiences = () => {
-    return (
-        <div className="border-b border-neutral-900 pb-4">
-            <motion.h2 
-                initial={{ opacity: 0, y: -100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.5 }}
-                viewport={{ once: true }}
-                className="my-20 text-center text-4xl"
-            >
-                Experience
-            </motion.h2>
-            <div className="relative px-4 lg:px-20">
-                {/* Vertical Center Line - Left aligned on mobile, Center on desktop */}
-                <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-0.5 bg-neutral-800 lg:transform lg:-translate-x-1/2" />
+const Express = () => {
+  return (
+    <section id='experience' className="py-20 sm:py-24 lg:py-32 relative">
+      <div className='flex flex-col items-center mb-12 sm:mb-16'>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className='section-label'
+        >
+          <span className='w-8 h-px bg-[#7c3aed]' />
+          My Journey
+          <span className='w-8 h-px bg-[#7c3aed]' />
+        </motion.div>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className='section-title text-center'
+        >
+          Work <span className='gradient-text'>Experience</span>
+        </motion.h2>
+      </div>
 
-                {EXPERIENCES.map((experience, index) => (
-                    <div 
-                        key={generateKey(experience.year)} 
-                        className={`mb-16 flex flex-wrap lg:flex-nowrap justify-between items-center w-full ${
-                            index % 2 === 0 ? '' : 'lg:flex-row-reverse'
-                        }`}
-                    >
-                        {/* Content Card */}
-                        <motion.div 
-                            className="w-full lg:w-[45%] mb-8 lg:mb-0 pl-12 lg:pl-0"
-                            initial={{ opacity: 0, x: index % 2 === 0 ? 100 : -100 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                        >
-                            <div className="bg-neutral-900/50 backdrop-blur-md border border-neutral-800 p-6 lg:p-8 rounded-2xl hover:border-purple-500/50 transition-colors duration-300 relative group">
-                                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-20 transition duration-300 blur" />
-                                <div className="relative z-10">
-                                    <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-4 gap-2 lg:gap-0">
-                                        <h3 className="text-xl font-bold text-white">{experience.role}</h3>
-                                        <span className="text-sm text-purple-400 font-mono bg-neutral-900/50 px-2 py-1 rounded border border-neutral-800">{experience.year}</span>
-                                    </div>
-                                    <h4 className="text-lg text-neutral-300 mb-4 font-medium">{experience.company}</h4>
-                                    <p className="text-neutral-400 mb-6 leading-relaxed text-sm lg:text-base">{experience.description}</p>
-                                    <div className="flex flex-wrap gap-2">
-                                        {experience.technologies.map((tech) => (
-                                            <span 
-                                                key={generateKey(tech)} 
-                                                className="px-3 py-1 bg-neutral-800 rounded-full text-xs text-neutral-300 border border-neutral-700"
-                                            >
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
-
-                        {/* Timeline Node - Visible on mobile (left) and desktop (center) */}
-                        <div className="absolute left-4 lg:left-1/2 transform -translate-x-1/2 flex justify-center items-center">
-                            <motion.div 
-                                className="w-4 h-4 bg-purple-500 rounded-full border-4 border-neutral-950 z-10 shadow-[0_0_20px_rgba(168,85,247,0.5)]"
-                                initial={{ scale: 0 }}
-                                whileInView={{ scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.4, delay: 0.2 }}
-                            />
-                        </div>
-
-                        {/* Empty Space for Alignment */}
-                        <div className="w-full lg:w-[45%] hidden lg:block" />
-                    </div>
-                ))}
-            </div>
+      {/* Timeline */}
+      <div className='relative max-w-4xl mx-auto'>
+        {/* Center line — brighter */}
+        <div className='absolute left-4 sm:left-6 lg:left-1/2 top-0 bottom-0 w-px lg:-translate-x-px'>
+          <div className='w-full h-full bg-gradient-to-b from-[#7c3aed] via-[#a78bfa] to-transparent opacity-50' />
         </div>
-    );
+
+        {EXPERIENCES.map((exp, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            className={`relative flex items-start gap-6 sm:gap-8 mb-10 sm:mb-14 ${
+              index % 2 === 0
+                ? 'lg:flex-row lg:pr-[calc(50%+2rem)]'
+                : 'lg:flex-row-reverse lg:pl-[calc(50%+2rem)]'
+            }`}
+          >
+            {/* Timeline Node */}
+            <div
+              className='absolute left-4 sm:left-6 lg:left-1/2 -translate-x-1/2 flex-shrink-0 z-10'
+            >
+              <div className='w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-[#7c3aed] border-2 border-[#0d0d14]'
+                style={{ boxShadow: '0 0 15px rgba(124,58,237,0.5), 0 0 30px rgba(124,58,237,0.2)' }}
+              />
+              <div className='absolute inset-0 rounded-full bg-[#7c3aed] animate-ping opacity-30' />
+            </div>
+
+            {/* Card */}
+            <div className={`ml-10 sm:ml-14 lg:ml-0 flex-1 group`}>
+              <motion.div
+                whileHover={{ y: -4 }}
+                className='glass-card p-5 sm:p-6 lg:p-7 relative overflow-hidden transition-all duration-300'
+              >
+                {/* Hover glow */}
+                <div className='absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none'
+                  style={{ background: 'radial-gradient(circle at center, rgba(124,58,237,0.12) 0%, transparent 70%)' }}
+                />
+
+                {/* Year badge */}
+                <div className='inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold mb-3 sm:mb-4'
+                  style={{
+                    background: 'rgba(124, 58, 237, 0.15)',
+                    border: '1px solid rgba(124, 58, 237, 0.35)',
+                    color: '#c4b5fd',
+                  }}
+                >
+                  {exp.year}
+                </div>
+
+                <h3 className='font-display text-lg sm:text-xl font-bold text-white mb-1.5'>
+                  {exp.role}
+                </h3>
+                <p className='text-[#a78bfa] text-sm sm:text-base font-medium mb-3 sm:mb-4'>
+                  {exp.company}
+                </p>
+                <p className='text-[#b8b5d0] text-sm leading-relaxed mb-4 sm:mb-5'>
+                  {exp.description}
+                </p>
+
+                {/* Tech badges */}
+                <div className='flex flex-wrap gap-1.5 sm:gap-2'>
+                  {exp.technologies.map((tech) => (
+                    <span key={tech} className='tech-badge text-[10px] sm:text-xs'>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
-export default Experiences;
+export default Express;

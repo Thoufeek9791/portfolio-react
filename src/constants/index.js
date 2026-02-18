@@ -5,44 +5,36 @@ import project4 from "../assets/projects/project-4.jpg";
 import ticTacImg from "../assets/projects/tic-tac-toe.jpg";
 import todoImg from "../assets/projects/todo-1.jpg";
 
-export const HERO_CONTENT = `I am a creative and detail-oriented Front-End Developer with two years of experience in building responsive and user-friendly web applications. I specialize in crafting intuitive user interfaces, enhancing user experiences, and ensuring seamless functionality across devices. Passionate about clean design and efficient development, I thrive on turning ideas into engaging digital experiences that align with modern web standards and user expectations.`;
+export const HERO_CONTENT = `Senior Frontend Software Engineer with ~3 years of experience building scalable, production-grade web applications using React, Next.js, and TypeScript. Strong expertise in performance optimization, accessibility (WCAG), design systems, and modern rendering strategies (SSR, SSG, ISR, CSR). Proven track record of improving application performance, developer experience, and frontend scalability across multiple product teams.`;
 
-export const ABOUT_TEXT = `I’m a Frontend Developer with a strong passion for building responsive, user-friendly web applications. With one year of industry experience, I specialize in HTML, CSS, JavaScript, React, Next.js 14, and Tailwind CSS, creating modern and interactive interfaces.
+export const ABOUT_TEXT = `I'm a Senior Frontend Engineer at Novac Technology Solutions with a passion for building high-performance, accessible web applications. I specialize in React, Next.js, TypeScript, and Tailwind CSS — crafting scalable design systems and reusable component architectures.
 
-I thrive on turning designs into seamless digital experiences, ensuring performance, accessibility, and clean code. My expertise extends to Figma, Material UI, Redux, API integration, and crafting scalable UI components with Shadcn UI.
+I've led the development of 50+ reusable UI components adopted across 3 product teams, pioneered a design system with Storybook and Radix UI achieving 90% adoption, and improved Lighthouse scores from 68 to 95. My work spans responsive design, WCAG accessibility compliance, advanced state management with Redux Toolkit and Zustand, and performance-driven frontend architectures.
 
-Constantly staying updated with the latest web technologies, I strive to deliver high-quality solutions tailored to user needs. Whether it’s optimizing UI/UX, implementing dynamic components, or building interactive dashboards, I’m dedicated to making the web more intuitive and efficient.`;
+With a Master's in Computer Applications and certifications from Udemy, Scrimba, and HackerRank, I'm constantly evolving. I leverage AI-powered development tools like Cursor, Antigravity, and Claude Code to accelerate my workflow and boost productivity. Whether it's optimizing Core Web Vitals, implementing CI/CD pipelines, or building micro-frontend environments, I'm dedicated to making the web faster, more accessible, and more intuitive.`;
 
 export const EXPERIENCES = [
   {
-    year: "2025 - Present",
-    role: "Senior Software Engineer",
-    company: "Novac Technology and Solutions.",
-    description: `Led a team in developing and maintaining web applications using JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases. Collaborated with stakeholders to define project requirements and timelines.`,
-    technologies: ["Javascript", "React.js", "Next.js", "Zustand"],
+    year: "04/2025 - Present",
+    role: "Senior Software Engineer (Frontend)",
+    company: "Novac Technology Solutions",
+    description: `Pioneered a scalable design system with Storybook and Radix UI, achieving 90% adoption across all product teams with WCAG accessibility compliance. Led development of 50+ reusable UI components across 3 product teams. Optimized Lighthouse score from 68 to 95 and reduced bundle size by 35%. Engineered scalable API data layers using TanStack Query with caching, retry logic, and background synchronization. Implemented CI/CD pipelines with ESLint, Prettier, Husky, and lint-staged.`,
+    technologies: ["React", "Next.js", "TypeScript", "Zustand", "TanStack Query", "Storybook", "Radix UI"],
   },
   {
-    year: "2024 - 2025",
-    role: "Software Engineer",
-    company: "Novac Technology and Solutions.",
-    description: `Designed and developed user interfaces for web applications using Next.js and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
-    technologies: ["Node", "Express", "Mongo DB", "mySQL"],
+    year: "07/2024 - 03/2025",
+    role: "Software Engineer (Frontend)",
+    company: "Novac Technology Solutions",
+    description: `Developed production features using React 19, Next.js, Redux Toolkit, Zustand, RTK Query, and Tailwind CSS. Implemented accessible, responsive UI interfaces based on Figma design system. Integrated multiple REST APIs supporting high-frequency UI data updates. Improved SEO and web visibility using semantic HTML and optimized metadata. Strengthened frontend security with authentication best practices and XSS/CSRF protection.`,
+    technologies: ["React", "Next.js", "Redux Toolkit", "RTK Query", "Tailwind CSS"],
   },
   {
-    year: "2023 - 2024",
-    role: "Software Engineer Trainee",
-    company: "Novac Technology and Solutions.",
-    description: `Developed and maintained web applications using JavaScript, React.js, and Node.js. Designed and implemented RESTful APIs for data communication. Collaborated with cross-functional teams to deliver high-quality software products on schedule.`,
-    // technologies: ["Python", "Svelte", "Three.js", "Postgres"],
-    technologies: ["HTML", "CSS", "Javascript", "scss", 'Bootstrap'],
+    year: "07/2023 - 06/2024",
+    role: "Software Engineer Trainee (Frontend)",
+    company: "Novac Technology Solutions",
+    description: `Trained on modern frontend technologies including React, Tailwind CSS, Git, and JavaScript. Developed reusable UI components and contributed to internal component libraries. Assisted in debugging UI issues and improving code quality through peer reviews and refactoring.`,
+    technologies: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "Git"],
   },
-  // {
-  //   year: "2020 - 2021",
-  //   role: "Software Engineer",
-  //   company: "Paypal",
-  //   description: `Contributed to the development of web applications using JavaScript, React.js, and Node.js. Managed databases and implemented data storage solutions using MongoDB. Worked closely with product managers to prioritize features and enhancements.`,
-  //   technologies: ["Ruby", "Rails", "PHP", "Sqlite"],
-  // },
 ];
 
 export const PROJECTS = [
@@ -51,24 +43,24 @@ export const PROJECTS = [
     link: 'https://skiretailcapital.com/',
     image: project3,
     description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "javascript", "ES6", 'modules', 'nodejs', 'express'],
+      "A financial services web platform built with modern JavaScript and Node.js. Developed responsive, performance-optimized interfaces with modular ES6 architecture.",
+    technologies: ["HTML", "CSS", "JavaScript", "ES6", "Node.js", "Express"],
   },
   {
     title: 'Shriram AMC',
     link: 'https://www.shriramamc.in/',
     image: project4,
     description:
-      "I worked on the Shriram AMC website, a financial services platform for mutual funds, where I developed responsive and user-friendly frontend interfaces. My contributions included building fund listing pages, implementing SIP and Lumpsum calculators, and enhancing goal-based investment planning sections. I focused on delivering a seamless user experience with modern UI, smooth navigation, and optimized performance, while ensuring accessibility and design consistency across devices.",
-    technologies: ["HTML", "CSS", "javascript", "ES6", 'modules', 'nodejs', 'express'],
+      "A financial services platform for mutual funds where I developed responsive frontend interfaces. Built fund listing pages, SIP and Lumpsum calculators, and goal-based investment planning sections with seamless user experience and optimized performance.",
+    technologies: ["HTML", "CSS", "JavaScript", "ES6", "Node.js", "Express"],
   },
   {
     title: "Promptopia",
     image: project1,
     link: 'https://promptopia-eight-navy.vercel.app/',
     description:
-      "A fully functional Prompt based Ai Website",
-    technologies: ["Nextjs", "Tailwind", "Nodejs", "MongoDB"],
+      "A full-stack AI prompt sharing platform built with Next.js. Features user authentication, CRUD operations, and a modern UI for discovering and sharing creative prompts.",
+    technologies: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
   },
   {
     title: "Tenzies Game",
@@ -78,42 +70,26 @@ export const PROJECTS = [
       "A fast-paced dice-rolling game built with React. Features interactive gameplay, real-time state management, and a sleek UI. Roll the dice, lock in your numbers, and win by matching all ten! 🎲⚡",
     technologies: ["React", "CSS"],
   },
-  // {
-  //   title: "Portfolio Website",
-  //   link: 'https://promptopia-eight-navy.vercel.app/',
-  //   image: project3,
-  //   description:
-  //     "A personal portfolio website showcasing projects, skills, and contact information.",
-  //   technologies: ["HTML", "CSS", "React", "Bootstrap"],
-  // },
-  // {
-  //   title: "Cryptocurrency Website",
-  //   link: '',
-  //   image: project4,
-  //   description:
-  //     "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-  //   technologies: ["React", "Redux Toolkit", "Redux Toolkit Query", "Shadcn UI", "mySQL", "nodejs"],
-  // },
   {
     title: "Tic Tac Toe Game",
     link: 'https://thoufeek9791.github.io/Tic-Tac-Toe/',
     image: ticTacImg,
     description:
-      "A classic Tic-Tac-Toe game built using HTML, CSS, and JavaScript. Features smooth user interactions, real-time win detection, and a responsive design. Play against a friend and enjoy a fun, minimalistic gaming experience! 🎮✨",
-    technologies: ["Html", "Bootstrap", "Vanilla JavaScript", "ES6", "react-confetti"],
+      "A classic Tic-Tac-Toe game with smooth user interactions, real-time win detection, responsive design, and celebration confetti animation. 🎮✨",
+    technologies: ["HTML", "Bootstrap", "JavaScript", "ES6", "react-confetti"],
   },
   {
     title: "TODO LIST",
     link: 'https://thoufeek9791.github.io/To-do-list-1/',
     image: todoImg,
     description:
-      "A simple and interactive To-Do List web app built with JavaScript, allowing users to add, delete, and mark tasks as completed. The app features a clean and responsive UI for seamless task management. It utilizes local storage to save tasks even after refreshing the page. Designed for efficiency, it enhances productivity with an intuitive user experience.",
-    technologies: ["HTML", "CSS", "Vanilla JavaScript", "ES6", "Local Storage",],
+      "An interactive To-Do List web app with add, delete, and mark-as-completed functionality. Features local storage persistence and a clean, responsive UI for seamless task management.",
+    technologies: ["HTML", "CSS", "JavaScript", "ES6", "Local Storage"],
   },
 ];
 
 export const CONTACT = {
-  address: "Mylapore Chennai",
+  address: "Chennai, India",
   phoneNo: "+91 9791055172",
   email: "thoufeekrahuman9361@gmail.com",
 };

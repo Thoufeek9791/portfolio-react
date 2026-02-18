@@ -1,112 +1,153 @@
-import { PROJECTS } from "../constants";
-import { generateKey } from "../utils/keygeneration";
+import { PROJECTS } from '../constants'
 import { motion, useScroll, useTransform } from 'motion/react'
-import { FaExternalLinkAlt } from "react-icons/fa";
-import { useRef } from "react";
+import { useRef } from 'react'
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
 
 const ProjectCard = ({ project, index }) => {
-    const ref = useRef(null)
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start end", "end start"]
-    })
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
+  const isEven = index % 2 === 0;
 
-    const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8])
-    const rotate = useTransform(scrollYProgress, [0, 1], [index % 2 === 1 ? -3 : 3, index % 2 === 1 ? 3 : -3])
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.7, delay: index * 0.15 }}
+      className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-6 sm:gap-8 lg:gap-12 items-center mb-16 sm:mb-20 lg:mb-28 relative`}
+    >
+      {/* Ghost project number — brighter */}
+      <div className={`absolute -top-8 sm:-top-12 ${isEven ? 'left-0 lg:left-[-1rem]' : 'right-0 lg:right-[-1rem]'} font-display text-[80px] sm:text-[120px] lg:text-[180px] font-bold leading-none pointer-events-none select-none`}
+        style={{ color: 'rgba(124,58,237,0.06)' }}
+      >
+        {String(index + 1).padStart(2, '0')}
+      </div>
 
-    return (
-        <motion.div 
-            ref={ref}
-            key={generateKey(project.title)} 
-            className={`mb-20 flex flex-wrap lg:flex-nowrap items-center gap-12 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-            <motion.div 
-                className="w-full lg:w-1/2"
-                style={{ scale, rotate }}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            >
-                <div className="relative group rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl shadow-purple-900/20">
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500 z-10" />
-                    <img 
-                        src={project.image} 
-                        alt={project.title} 
-                        className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-700"
-                    />
-                </div>
-            </motion.div>
-
-            <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                <motion.h3 
-                    className="text-3xl font-bold mb-4 text-white bg-gradient-to-r from-white to-neutral-400 bg-clip-text text-transparent"
-                    initial={{ opacity: 0, x: index % 2 === 1 ? -50 : 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2, duration: 0.6 }}
-                >
-                    {project.title}
-                </motion.h3>
-                <motion.p 
-                    className="mb-6 text-neutral-400 text-lg leading-relaxed"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 0.3, duration: 0.6 }}
-                >
-                    {project.description}
-                </motion.p>
-                <div className="flex flex-wrap gap-3 mb-8">
-                    {project.technologies.map((tech, i) => (
-                        <motion.span 
-                            key={generateKey(tech)} 
-                            className="px-4 py-2 rounded-full bg-neutral-900/50 border border-neutral-800 text-sm font-medium text-purple-300 hover:bg-purple-900/20 hover:border-purple-500/50 transition-colors cursor-default"
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.4 + (i * 0.1) }}
-                        >
-                            {tech}
-                        </motion.span>
-                    ))}
-                </div>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
-                >
-                    <a 
-                        href={project.link} 
-                        target="_blank" 
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-purple-500 hover:text-white transition-all duration-300 shadow-lg shadow-white/10 hover:shadow-purple-500/30"
-                    >
-                        View Project <FaExternalLinkAlt size={14} />
-                    </a>
-                </motion.div>
-            </div>
+      {/* Image */}
+      <div className='flex-1 w-full relative group rounded-2xl overflow-hidden'
+        style={{
+          border: '1px solid rgba(124,58,237,0.2)',
+          boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
+        }}
+      >
+        <motion.div style={{ y: imageY }} className='w-full'>
+          <img
+            src={project.image}
+            alt={project.title}
+            className='w-full h-48 sm:h-56 lg:h-72 object-cover transition-transform duration-700 group-hover:scale-105'
+          />
         </motion.div>
-    )
-}
+
+        {/* Hover overlay */}
+        <div className='absolute inset-0 bg-[rgba(5,5,8,0.6)] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-sm'>
+          <div className='glass-card px-5 py-3 flex items-center gap-3'>
+            <FaExternalLinkAlt className='text-[#c4b5fd]' size={14} />
+            <span className='text-sm font-medium text-white'>View Project</span>
+          </div>
+        </div>
+
+        {/* Bottom gradient */}
+        <div className='absolute inset-x-0 bottom-0 h-16'
+          style={{ background: 'linear-gradient(to top, rgba(5,5,8,0.6), transparent)' }}
+        />
+      </div>
+
+      {/* Content */}
+      <div className='flex-1 space-y-4 sm:space-y-5'>
+        <h3 className='font-display text-2xl sm:text-3xl font-bold text-white'>
+          {project.title}
+        </h3>
+
+        <p className='text-[#b8b5d0] text-sm sm:text-base leading-relaxed'>
+          {project.description}
+        </p>
+
+        {/* Tech badges */}
+        <div className='flex flex-wrap gap-1.5 sm:gap-2'>
+          {project.technologies.map((tech) => (
+            <span key={tech} className='tech-badge text-[10px] sm:text-xs'>
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {/* Links */}
+        <div className='flex gap-3 sm:gap-4 pt-2'>
+          {project.link && (
+            <a
+              href={project.link}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='btn-primary text-xs sm:text-sm py-2.5 px-5'
+            >
+              <FaExternalLinkAlt size={12} />
+              Live Demo
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='btn-secondary text-xs sm:text-sm py-2.5 px-5'
+            >
+              <FaGithub size={14} />
+              Code
+            </a>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 const Projects = () => {
-    return (
-        <div className="border-b border-neutral-900 pb-4">
-            <motion.h2 
-                initial={{ opacity: 0, y: -100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.5 }}
-                viewport={{ once: true }}
-                className="my-20 text-center text-4xl"
-            >
-                Projects
-            </motion.h2>
-            <div className="px-4 lg:px-20">
-                {PROJECTS.map((project, index) => (
-                    <ProjectCard key={generateKey(project.title)} project={project} index={index} />
-                ))}
-            </div>
-        </div>
-    );
-}
+  return (
+    <section id='projects' className="py-20 sm:py-24 lg:py-32 relative">
+      <div className='flex flex-col items-center mb-12 sm:mb-16'>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className='section-label'
+        >
+          <span className='w-8 h-px bg-[#7c3aed]' />
+          My Work
+          <span className='w-8 h-px bg-[#7c3aed]' />
+        </motion.div>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className='section-title text-center'
+        >
+          Featured <span className='gradient-text'>Projects</span>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className='section-subtitle'
+        >
+          A showcase of projects that define my craft and creativity
+        </motion.p>
+      </div>
+
+      <div>
+        {PROJECTS.map((project, index) => (
+          <ProjectCard key={index} project={project} index={index} />
+        ))}
+      </div>
+    </section>
+  );
+};
 
 export default Projects;
