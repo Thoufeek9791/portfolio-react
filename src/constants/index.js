@@ -4,6 +4,7 @@ import project3 from "../assets/projects/project-3.jpg";
 import project4 from "../assets/projects/project-4.jpg";
 import ticTacImg from "../assets/projects/tic-tac-toe.jpg";
 import todoImg from "../assets/projects/todo-1.jpg";
+import textTransformerImg from "../assets/projects/thomas-bormans-pcpsVsyFp_s-unsplash.jpg";
 
 export const HERO_CONTENT = `Senior Frontend Software Engineer with ~3 years of experience building scalable, production-grade web applications using React, Next.js, and TypeScript. Strong expertise in performance optimization, accessibility (WCAG), design systems, and modern rendering strategies (SSR, SSG, ISR, CSR). Proven track record of improving application performance, developer experience, and frontend scalability across multiple product teams.`;
 
@@ -38,6 +39,14 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+  {
+    title: "AI Text Transformer",
+    link: 'https://text-transformer-mu.vercel.app/',
+    image: textTransformerImg,
+    description:
+      "An AI-powered text transformation tool that can summarize, rewrite, and translate text. Features a clean, intuitive interface with real-time output, sample text loading, and copy-to-clipboard functionality.",
+    technologies: ["Next.js", "React", "Tailwind CSS", "AI/NLP", "Vercel"],
+  },
    {
     title: "SKI Retail Capital",
     link: 'https://skiretailcapital.com/',
